@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: neon-creds
+  namespace: crossplane-system
+type: Opaque
+stringData:
+  credentials: REPLACE_WITH_NEON_API_KEY
+---
+apiVersion: neon.crossplane.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: default
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: neon-creds
+      key: credentials

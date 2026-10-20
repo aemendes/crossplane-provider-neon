@@ -1,0 +1,14 @@
+apiVersion: database.neon.crossplane.io/v1alpha1
+kind: Project
+metadata:
+  name: my-app
+spec:
+  forProvider:
+    name: my-app
+    regionId: aws-us-east-2
+    pgVersion: 16
+  writeConnectionSecretToRef:
+    namespace: crossplane-system
+    name: my-app-conn
+  providerConfigRef:
+    name: default

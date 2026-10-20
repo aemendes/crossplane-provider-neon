@@ -1,0 +1,10 @@
+apiVersion: meta.pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-neon
+  annotations:
+    meta.crossplane.io/maintainer: Alexandre Mendes
+    meta.crossplane.io/source: github.com/aemendes/crossplane-provider-neon
+    meta.crossplane.io/description: |
+      Native Go Crossplane provider for Neon, managing Project resources
+      directly against the Neon REST API.
